@@ -16,6 +16,7 @@ function successAjax(xhttp) {
   // függvények helye
   sortByName(userDatas);
   displayCharacters(userDatas);
+  swapEmptyStrByFalse(userDatas);
   document.getElementById('search-button').addEventListener('click', function search() {
     searchForCharacter(userDatas);
   });
@@ -39,6 +40,16 @@ function sortByName(input) {
   }
 }
 
+function swapEmptyStrByFalse(input) {
+  for (var i = 0; i < input.length; i++) {
+    for (var k in input[i]) {
+      if (input[i][k] === '') {
+        input[i][k] = false;
+      }
+    }
+  }
+}
+
 
 function displayCharacters(input) {
   var target = document.querySelector('.character-list');
@@ -46,6 +57,7 @@ function displayCharacters(input) {
     if (input[i].dead !== 'true') {
       var div = document.createElement('div');
       div.className = 'oneCharacter';
+      div.id = input[i].name;
       var result = '';
       result += '<img src=' + input[i].portrait + ' class = "portraitOfCharacter" alt = "portrait"><br>' + input[i].name;
     }
@@ -76,11 +88,16 @@ function searchForCharacter(userDatas) {
   var found = false;
   for (var i = 0; i < userDatas.length; i++) {
     if (userDatas[i].name.toLowerCase().indexOf(search) > -1) {
-      result = userDatas[i].name + '<br><br>' + '<img src=' + userDatas[i].picture + ' class="found" alt=imgOfFound><br>' + userDatas[i].bio;
+      result = userDatas[i].name + '<br><br>' + '<img src=' + userDatas[i].picture + ' class="found" alt=imgOfFound><br>' +
+                userDatas[i].bio;
       found = true;
+      if (userDatas[i].house !== false) {
+        result += '<br><br><img src=/assets/houses/' + userDatas[i].house + '.png alt = house>';
+      }
     } if (found === false) {
       result = 'Character not found';
     }
   }
   displayResult(result);
 }
+

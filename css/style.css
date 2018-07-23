@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Cormorant+Unicase);
+
 body{
     margin:0;
     font-size: 16px;
@@ -21,7 +23,8 @@ body{
   }
   
   .character-list{
-    font-family: 'Russo One',serif;
+    font-family: 'Cormorant Unicase', serif;
+    font-weight: bold;
     width: 100%;
     background-image: url(/assets/site/mapblue.jpg);
     background-size: cover;
@@ -84,12 +87,13 @@ body{
   }
   
   .oneCharacter {
+    font-family: 'Cormorant Unicase', serif;
     display: inline-block;
     margin-top: 25px;
       min-width: 9vw;
       min-height: 6vw;
       text-align: center;
-      font-size: 13px;
+      font-size: 15px;
   }
 
   .portraitOfCharacter {
@@ -97,6 +101,7 @@ body{
   }
 
   .resultOfSearch {
+    font-family: 'Cormorant Unicase', serif;
       text-align: center;
       font-weight: bold;
       letter-spacing: 2px;
