@@ -1,4 +1,8 @@
+1.
+
 CREATE DATABASE IF NOT EXISTS got DEFAULT CHARSET=utf8 COLLATE utf8_general_ci;
+
+2.
 
 CREATE TABLE characters(
   id int NOT NULL,

@@ -3,11 +3,6 @@ body{
     font-size: 16px;
   }
   
-  div{
-    position:relative;
-    box-sizing:border-box;
-    padding: 20px;
-  }
   .container{
     width:100%;
     min-height: 100vh;
@@ -28,15 +23,20 @@ body{
   .character-list{
     font-family: 'Russo One',serif;
     width: 100%;
-    background-color: #7a7a7a;
-    overflow: auto;
-    color: rgb(252, 247, 0);
+    background-image: url(/assets/site/mapblue.jpg);
+    background-size: cover;
+   /* overflow: auto;*/
+    color: rgb(0, 0, 0);
   }
   
   .one-character{
+      color: aliceblue;
     width: 100%;
     background-color: black;
-    background-size: cover
+    background-size: cover;
+    position:relative;
+    box-sizing:border-box;
+    padding: 20px;
   }
   
   .searchbar{
@@ -83,3 +83,21 @@ body{
     }
   }
   
+  .oneCharacter {
+    display: inline-block;
+    margin-top: 25px;
+      min-width: 9vw;
+      min-height: 6vw;
+      text-align: center;
+      font-size: 13px;
+  }
+
+  .portraitOfCharacter {
+    width: 45%;
+  }
+
+  .resultOfSearch {
+      text-align: center;
+      font-weight: bold;
+      letter-spacing: 2px;
+  }
