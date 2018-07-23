@@ -40,6 +40,7 @@ function sortByName(input) {
   }
 }
 
+// üres adatok cseréje false-ra
 function swapEmptyStrByFalse(input) {
   for (var i = 0; i < input.length; i++) {
     for (var k in input[i]) {
@@ -50,7 +51,7 @@ function swapEmptyStrByFalse(input) {
   }
 }
 
-
+// szereplők megjelenítése a character-list divben
 function displayCharacters(input) {
   var target = document.querySelector('.character-list');
   for (var i = 0; i < input.length; i++) {
@@ -67,7 +68,7 @@ function displayCharacters(input) {
 }
 
 
-// display result of search
+// keresés eredményének megjelenítése
 function displayResult(result) {
   var oldDiv = document.querySelector('.resultOfSearch');
   if (oldDiv !== null) {
@@ -81,7 +82,7 @@ function displayResult(result) {
 }
 
 
-// search function
+// keresés funkció
 function searchForCharacter(userDatas) {
   var search = document.querySelector('#search-text').value.toLowerCase();
   var result = '';
