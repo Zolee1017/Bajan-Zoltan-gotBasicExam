@@ -1,0 +1,76 @@
+1. Készíts egy adatbázist got névvel! Az engine legyen InnoDB.
+
+2. Készíts egy táblát characters névvel!
+
+3. A táblában a következő adatokat kell letárolni az egyes szereplőkről:
+	Azonosító: ahogy szoktuk	
+	Név: a karakter neve 
+	Becenév: Véreb, Kisujj stb.
+	Halott-e: meghalt-e már
+	Portrékép: egy kép ÚTVONALA a csinos, vagy kevésbé csinos arcukról 
+	Kép: egy kép ÚTVONALA a filmből
+	Történet: a karakter rövid biográfiája
+	Ház: azaz hogy melyik nemesi házhoz tartozik
+	Szervezet: azaz hogy melyik házhoz tartozik
+	Az adatok típusát te választod meg.
+	Az azonosító, név, Portrékép, Kép kötelező adat.
+	A többi megszorítás rád van bízva.
+
+4. Ha kész az adatbázis és a  tábla, a  létrehozó SQL utasításokat (db és table egyaránt) másold
+bele az SQL mappában lévő create.txt fileba.
+
+5. Az sql mappában találsz egy "importalandoAdatok" nevű sql filet.
+Ez tartalmazza az importálandó adatokat. (Már magát az sql kódot amit csak le kell futtatni)
+Mézd meg a file tartalmát, a mezőneveket, stb.
+Ha kell importálás előtt írd át a mezőneveket, figyelj oda a "dead" mező milyen típusú
+Importáld a tábládba az adatokat.
+
+6. Az alábbbi lekérdezésket írd meg:
+
+a. Melyik házba hány élő karakter tartozik, amelyik nem tartozik egy szervezethez sem. Tehát a ház neve, és az adott házba tartozó karakterek száma. (ha él, és egy szervezetnek sem tagja)
+
+b. Minden olyan karakter minden adata, aki él, és akinek a történetében a „hero” szó szerepel, és még életben van.
+
+c. Az éjjeli őrség szervezet tagjai, akik életben vannak, és nem tartoznak egy házhoz sem.
+
+d. Azon élő karakterek 
+Nevét, mint Hero, 
+Alias (bece) nevét, mint Nick Name és 
+házát, mint Big House, 
+akik 
+életben vannak, 
+nem Lannisterek (tehát nem a Lannister házba tartoznak), 
+nem a Royalguard tagjai, 
+és a történetükben nem szerepel a Lennister vagy a King’s Landing szó.
+
+7. Az összes lekérdezést mentsd el az SQL mappa „lekerdezesek.txt” nevű fájljába!
+
+8. Importáld ki a táblád adatait egy json fájlba! Ezt a phpMyAdminba az adott adatbázist, majd táblát kiválasztva az Exportálás menüpont alatt tudod megtenni.  Az egyetlen beállítás amihez hozzá kell nyúlni az a formátum. Az legyen Json.
+Ezt a json fájlt másold be a vizsgamappádon belül json mappába!
+
+
+
+Frontend feladatok
+
+1. Html és css segítségével hozz létre egy hasonló elrendezésű oldalt! 
+
+2. Az ÉLŐ karakterek profilképe, és alatta a nevük legyen megjelenítve. Mivel ez összes 48 karakter lesz, ezért pontosan 6 sorod legyen, soronként 8 karakterrel. (A képen látható középen lévő gappel ne foglalkozz). A képek útvonala ott a json objektumban.
+A térkép a „site” nevű mappában található az „assets”-en belül.
+A házak ikonja a „houses” mappában található az „assets”-en belül.
+
+3. A karakterek megjelenítése név szerint rendezve történjen!
+
+4. Amennyiben egy karakter nevére rákattintok a jobb oldali sávban jelenjen meg a nagyobb méretű, filmből kivett képe, a karakter neve, a házának a címere (ha van), és a rövid leírása.
+
+5. Amennyiben a keresőmezőbe beírok egy nevet (teljes nevet, kis-és nagybetű különbség nem számít), akkor az adott nevű karakterről jeleníti meg az adatokat.
+Amennyiben nincs ilyen név, kiírja: „Character not found”.
+
+
+#haha
+Plusz:
+1. Lehetőleg formázott div-eket használj, ne táblázatot!
+2. Font awesome vagy egyéb ikonok használata a keresőmezőnél!
+3. Használj saját betűkészletet a szövegek megjelenítéséhez.
+4. A karakterek képei/nevének szövege legyen valamilyen effekttel ellátva amikor fölé viszem a kurzort.
+5. A karakterek képei/nevének szövege legyen valamilyen effekttel ellátva amikor az adott karakter van kiválasztva!
+6. Legyen responsive a megjelenés!

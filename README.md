@@ -1,1 +1,0 @@
-# Bajan-Zoltan-gotBasicExam
