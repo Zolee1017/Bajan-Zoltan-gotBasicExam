@@ -72,7 +72,6 @@ akkor az adott nevű karakterről jeleníti meg az adatokat.
 Amennyiben nincs ilyen név, kiírja: „Character not found”.
 
 
-#haha
 Plusz:
 1. Lehetőleg formázott div-eket használj, ne táblázatot!
 2. Font awesome vagy egyéb ikonok használata a keresőmezőnél!

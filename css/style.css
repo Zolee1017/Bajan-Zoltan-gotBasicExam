@@ -48,6 +48,9 @@ body{
   
   #search-text,
   #search-button {
+    font-family: 'Cormorant Unicase', serif;
+    font-weight: bold;
+    font-size: 15px;
     line-height: 16px;
     padding: 5px 10px;
     border-radius: 5px;
@@ -98,6 +101,17 @@ body{
 
   .portraitOfCharacter {
     width: 45%;
+  }
+
+  .portraitOfCharacter:hover {
+    transition: .2s;
+    transform: scale(1.2);
+  }
+
+  #search-button:hover {
+    color: #ffffff;
+    transition: .2s;
+    transform: scale(1.2);
   }
 
   .resultOfSearch {
