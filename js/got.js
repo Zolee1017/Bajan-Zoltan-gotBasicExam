@@ -16,7 +16,6 @@ function successAjax(xhttp) {
   // függvények helye
   sortByName(userDatas);
   displayCharacters(userDatas);
-  swapEmptyStrByFalse(userDatas);
   document.getElementById('search-button').addEventListener('click', function search() {
     searchForCharacter(userDatas);
   });
@@ -40,16 +39,6 @@ function sortByName(input) {
   }
 }
 
-// üres adatok cseréje false-ra
-function swapEmptyStrByFalse(input) {
-  for (var i = 0; i < input.length; i++) {
-    for (var k in input[i]) {
-      if (input[i][k] === '') {
-        input[i][k] = false;
-      }
-    }
-  }
-}
 
 // szereplők megjelenítése a character-list divben
 function displayCharacters(input) {
@@ -88,11 +77,11 @@ function searchForCharacter(userDatas) {
   var result = '';
   var found = false;
   for (var i = 0; i < userDatas.length; i++) {
-    if (userDatas[i].name.toLowerCase().indexOf(search) > -1) {
+    if (userDatas[i].name.toLowerCase().indexOf(search) > -1 && search !== '') {
       result = userDatas[i].name + '<br><br>' + '<img src=' + userDatas[i].picture + ' class="found" alt=imgOfFound><br>' +
-                userDatas[i].bio;
+        userDatas[i].bio;
       found = true;
-      if (userDatas[i].house !== false) {
+      if (userDatas[i].house !== '') {
         result += '<br><br><img src=/assets/houses/' + userDatas[i].house + '.png alt = house>';
       }
     } if (found === false) {
