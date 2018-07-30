@@ -42,18 +42,38 @@ function sortByName(input) {
 
 // szereplők megjelenítése a character-list divben
 function displayCharacters(input) {
-  var target = document.querySelector('.character-list');
   for (var i = 0; i < input.length; i++) {
     if (input[i].dead !== 'true') {
-      var div = document.createElement('div');
-      div.className = 'oneCharacter';
-      div.id = input[i].name;
-      var result = '';
-      result += '<img src=' + input[i].portrait + ' class = "portraitOfCharacter" alt = "portrait"><br>' + input[i].name;
+      createOneCharacter(input[i]);
     }
-    div.innerHTML = result;
-    target.appendChild(div);
   }
+}
+
+
+function createOneCharacter(input) {
+  var target = document.querySelector('.character-list');
+  var div = document.createElement('div');
+  div.className = 'oneCharacter';
+  div.id = input.name;
+  div.characterData = input;
+  var result = '';
+  div.onclick = function event() {
+    createCharacter(div.characterData);
+  };
+  result += '<img src=' + input.portrait + ' class = "portraitOfCharacter" alt = "portrait"><br>' + input.name;
+  div.innerHTML = result;
+  target.appendChild(div);
+}
+
+
+function createCharacter(input) {
+  var result = '';
+  result = input.name + '<br><br>' + '<img src=' + input.picture + ' class="found" alt=imgOfFound><br>' +
+    input.bio;
+  if (input.house !== '') {
+    result += '<br><br><img src=/assets/houses/' + input.house + '.png alt = house>';
+  }
+  displayResult(result);
 }
 
 
@@ -90,4 +110,5 @@ function searchForCharacter(userDatas) {
   }
   displayResult(result);
 }
+
 
